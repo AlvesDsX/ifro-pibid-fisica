@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AccessibilityBar from './AccessibilityBar';
+import logoIfro from '/logo-ifro.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,7 +44,7 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-2 sm:gap-4 hover:opacity-80 transition-opacity duration-200">
             {/* Logo do IFRO */}
             <img 
-              src="/logo-ifro.png" 
+              src={logoIfro} 
               alt="Logo do IFRO" 
               className="h-10 sm:h-14 md:h-16 w-auto object-contain"
               style={{ filter: 'brightness(0)' }}
