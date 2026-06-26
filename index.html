@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panorama PIBID Física</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="newsletter-container">
+    
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-left">
+            <div class="panorama-title">PANORAMA</div>
+            <div class="quinzenal-pill">
+                <i class="fa-solid fa-bullhorn"></i>
+                <i class="fa-solid fa-newspaper"></i>
+                <i class="fa-solid fa-microphone"></i>
+                <span class="quinzenal-text">QUINZENAL</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="logo-circle">
+                <i class="fa-solid fa-square-poll-vertical"></i> <!-- Icon resembling IFRO logo -->
+                <div class="logo-text">INSTITUTO<br>FEDERAL</div>
+                <div class="logo-sub">Rondônia</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-header Bar -->
+    <div class="sub-header">
+        PIBID Física — IFRO Campus Calama — Edição Especial
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content-area">
+        
+        <!-- Featured Article (Full Width) -->
+        <article class="featured-article">
+            <img src="assets/images/physics_experiment_1782278365444.png" alt="O que é o PIBID">
+            <div class="article-content">
+                <h2>Primeiros Passos no Mundo da Física: O que é o PIBID?</h2>
+                <p>O Programa Institucional de Bolsa de Iniciação à Docência é uma iniciativa para aperfeiçoar e valorizar a formação de professores para a educação básica. O programa concede bolsas a alunos de licenciatura que atuam em escolas públicas.</p>
+                <button class="btn-green" onclick="openModal('inicio')">Saber mais</button>
+            </div>
+        </article>
+
+        <!-- 2-Column Grid -->
+        <div class="articles-grid">
+            
+            <article class="grid-article">
+                <img src="assets/images/teacher_explaining_1782278376213.png" alt="Objetivos">
+                <div class="article-content">
+                    <h2>Objetivos e Metas do Programa no IFRO</h2>
+                    <p>Discutir conceitos teóricos e elaborar atividades práticas que promovam o interesse pelas ciências naturais nas escolas.</p>
+                    <button class="btn-green" onclick="openModal('objetivos')">Saber mais</button>
+                </div>
+            </article>
+
+            <article class="grid-article">
+                <img src="assets/images/students_smiling_1782278385540.png" alt="Equipe">
+                <div class="article-content">
+                    <h2>Nossa Equipe: Professores e Pibidianos</h2>
+                    <p>Conheça os coordenadores, supervisores e os acadêmicos bolsistas de Licenciatura em Física do IFRO Campus Calama.</p>
+                    <button class="btn-green" onclick="openModal('equipe')">Saber mais</button>
+                </div>
+            </article>
+
+            <article class="grid-article">
+                <img src="assets/images/physics_lab_1782278396653.png" alt="Edição 2022/2024">
+                <div class="article-content">
+                    <h2>Ações na Escola John Kennedy: Edição 2022/2024</h2>
+                    <p>Experimentos de termologia, eletroscópios caseiros e o lançamento de foguetes de propulsão de água marcaram o ano letivo.</p>
+                    <button class="btn-green" onclick="openModal('john-kennedy')">Saber mais</button>
+                </div>
+            </article>
+
+            <article class="grid-article">
+                <img src="assets/images/physics_experiment_1782278365444.png" alt="Escola 4 de Janeiro">
+                <div class="article-content">
+                    <h2>Ações na Escola 4 de Janeiro e Eletivas</h2>
+                    <p>Estudantes realizaram experimentos de refração da luz, circuitos elétricos e construíram maquetes do Sistema Solar.</p>
+                    <button class="btn-green" onclick="openModal('4-janeiro')">Saber mais</button>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+    <!-- Blue Section -->
+    <div class="blue-section">
+        <h2>Fique por dentro das atividades de outras edições!</h2>
+        <div class="blue-grid">
+            <div class="blue-card">
+                <img src="assets/images/teacher_explaining_1782278376213.png" alt="Edição 2020/2022">
+                <h3>Edição 2020/2022: Adaptação ao Ensino Remoto</h3>
+                <p>Durante a pandemia, o PIBID atuou fortemente com ferramentas online, aulas via Google Meet e o II ENLIC.</p>
+                <button class="btn-green" onclick="openModal('pibid-2020')">Saber mais</button>
+            </div>
+            <div class="blue-card">
+                <img src="assets/images/physics_lab_1782278396653.png" alt="Edição 2014/2020">
+                <h3>Edição Histórica 2014/2020</h3>
+                <p>O início da nossa jornada no PIBID Física. Registros antigos mantidos no blog oficial da edição para consulta acadêmica.</p>
+                <button class="btn-green" onclick="openModal('pibid-2014')">Saber mais</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <h2>Quer entrar em contato?</h2>
+        <p>Clique abaixo e fale diretamente com a equipe do PIBID Física IFRO!</p>
+        
+        <a href="mailto:pibidfisicaifro@gmail.com" class="pill-button">pibidfisicaifro@gmail.com</a>
+        
+        <div class="social-icons">
+            <a href="#" class="bg-facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="bg-instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="bg-tiktok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" class="bg-youtube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="bg-linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="bg-x"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+
+        <div class="footer-logo-box">
+            <i class="fa-solid fa-square-poll-vertical"></i>
+            <div class="text">
+                <div class="text-inst">INSTITUTO FEDERAL</div>
+                <div class="text-ron">Rondônia</div>
+            </div>
+        </div>
+
+        <div class="footer-ascom">
+            Assessoria de Comunicação e Eventos - ASCOM/IFRO<br>
+            Apoio: PIBID Física IFRO Campus Calama
+        </div>
+
+        <div class="footer-unsubscribe">
+            Caso deseje não receber mais este informativo, envie e-mail para <a href="mailto:ascom@ifro.edu.br">ascom@ifro.edu.br</a><br>
+            com o assunto [Cancelar Panorama].
+        </div>
+    </footer>
+
+</div>
+
+<!-- MODALS FOR SPA CONTENT -->
+<div id="detailModal" class="detail-modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="btn-close" onclick="closeModal(event)"><i class="fa-solid fa-xmark"></i></button>
+        <div id="modal-body" class="detail-content">
+            <!-- Content gets injected here by JS -->
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
