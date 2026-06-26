@@ -33,29 +33,29 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border shadow-sm' : 'bg-background md:bg-transparent'
+        isScrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border shadow-sm' : 'bg-background/95 backdrop-blur-sm border-b border-border'
       }`}
     >
       <AccessibilityBar />
       <nav className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-6'}`}>
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity duration-200">
+          <Link to="/" className="flex items-center gap-2 sm:gap-4 hover:opacity-80 transition-opacity duration-200">
             {/* Logo do IFRO */}
             <img 
               src="/logo-ifro.png" 
               alt="Logo do IFRO" 
-              className="h-16 md:h-20 w-auto object-contain"
+              className="h-10 sm:h-14 md:h-16 w-auto object-contain"
               style={{ filter: 'brightness(0)' }}
             />
 
             {/* Divisor vertical */}
-            <div className="w-px h-16 bg-border mx-2"></div>
+            <div className="w-px h-10 sm:h-14 bg-border mx-1 sm:mx-2"></div>
 
             {/* Texto */}
             <div className="leading-tight">
-              <div className="text-xl font-bold tracking-tight text-foreground">PIBID Física</div>
-              <div className="text-xs text-muted-foreground font-medium tracking-widest uppercase mt-0.5">IFRO Campus Calama</div>
+              <div className="text-base sm:text-xl font-bold tracking-tight text-foreground">PIBID Física</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground font-medium tracking-widest uppercase mt-0.5">IFRO Campus Calama</div>
             </div>
           </Link>
 

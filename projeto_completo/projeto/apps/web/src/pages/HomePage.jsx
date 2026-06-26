@@ -112,8 +112,7 @@ const HomePage = () => {
       <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
         <Header />
 
-        {/* Hero Section */}
-        <section className="relative pt-40 pb-24 md:pt-56 md:pb-32 overflow-hidden bg-grid-pattern">
+        <section className="relative pt-28 pb-16 md:pt-56 md:pb-32 overflow-hidden bg-grid-pattern">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none z-0"></div>
           <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <motion.div
@@ -122,21 +121,21 @@ const HomePage = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="max-w-6xl"
             >
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none mb-12 text-balance">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight sm:leading-none mb-8 md:mb-12 text-balance">
                 Aperfeiçoando a<br />
                 formação docente<br />
                 <span className="text-primary">na educação básica.</span>
               </h1>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20 border-t border-border pt-12">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+              <div className="flex flex-col sm:flex-row sm:items-end gap-8 mt-8 md:mt-20 border-t border-border pt-8 md:pt-12">
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed flex-1">
                   O PIBID Física do IFRO forma professores comprometidos com a educação pública, levando experimentos, foguetes e descobertas científicas para escolas de Porto Velho.
                 </p>
-                <div className="flex flex-col items-start md:items-end justify-center">
+                <div className="flex-shrink-0">
                   <Button
                     asChild
                     size="lg"
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] text-lg px-10 py-8 shadow-editorial"
+                    className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] text-base sm:text-lg px-8 py-6 sm:py-8 shadow-editorial"
                   >
                     <Link to="/about">Conheça o Programa</Link>
                   </Button>
@@ -149,9 +148,9 @@ const HomePage = () => {
 
 
         {/* Números */}
-        <section className="py-24 bg-muted/30 border-y border-border">
+        <section className="py-16 md:py-24 bg-muted/30 border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8">
               {numeros.map((item, index) => (
                 <motion.div
                   key={item.label}
@@ -161,10 +160,10 @@ const HomePage = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex flex-col"
                 >
-                  <div className="text-5xl md:text-6xl font-serif text-foreground font-bold tracking-tight mb-4" style={{ fontVariantNumeric: 'tabular-nums' }}>
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-serif text-foreground font-bold tracking-tight mb-2 md:mb-4" style={{ fontVariantNumeric: 'tabular-nums' }}>
                     {item.metric}
                   </div>
-                  <div className="text-sm font-medium text-muted-foreground uppercase tracking-widest">{item.label}</div>
+                  <div className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-widest leading-tight">{item.label}</div>
                 </motion.div>
               ))}
             </div>
