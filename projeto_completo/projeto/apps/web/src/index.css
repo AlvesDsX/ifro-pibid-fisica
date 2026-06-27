@@ -158,6 +158,7 @@ body {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.12) 1px, transparent 1px),
                       linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
   }
+  .dark .bg-grid-pattern,
   .high-contrast .bg-grid-pattern {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
                       linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
