@@ -8,7 +8,7 @@ const AnimatedCounter = ({ value, direction = 'up', className }) => {
     damping: 60,
     stiffness: 100,
   });
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: '0px' });
 
   useEffect(() => {
     if (isInView) {

@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Type, Contrast, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AccessibilityBar from './AccessibilityBar';
+import { useAccessibility } from '../contexts/AccessibilityContext';
 import logoIfro from '/logo-ifro.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { isHighContrast, toggleHighContrast, fontSize, toggleFontSize, isDarkMode, toggleDarkMode } = useAccessibility();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -141,6 +143,34 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
+              
+              <div className="flex items-center justify-between pt-4 border-t border-border">
+                <button 
+                  onClick={toggleFontSize} 
+                  className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Aumentar Fonte"
+                >
+                  <Type className="w-5 h-5" /> 
+                  <span className="text-[10px] uppercase tracking-widest font-bold">{fontSize === 'large' ? 'Normal' : 'A+ Fonte'}</span>
+                </button>
+                <button 
+                  onClick={toggleDarkMode} 
+                  className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Modo Escuro"
+                >
+                  {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                  <span className="text-[10px] uppercase tracking-widest font-bold">{isDarkMode ? 'Claro' : 'Escuro'}</span>
+                </button>
+                <button 
+                  onClick={toggleHighContrast} 
+                  className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Alto Contraste"
+                >
+                  <Contrast className="w-5 h-5" />
+                  <span className="text-[10px] uppercase tracking-widest font-bold">{isHighContrast ? 'Normal' : 'Contraste'}</span>
+                </button>
+              </div>
+
               <div className="pt-4">
                 <Button
                   asChild
