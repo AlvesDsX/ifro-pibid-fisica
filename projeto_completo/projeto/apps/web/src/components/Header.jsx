@@ -38,7 +38,6 @@ const Header = () => {
       }`}
     >
       <AccessibilityBar />
-      <nav className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-6'}`}>
       <nav className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${isScrolled ? 'py-3' : 'py-5'}`}>
         {/* Desktop: grid 3 colunas com logo centralizado */}
         <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center gap-4">

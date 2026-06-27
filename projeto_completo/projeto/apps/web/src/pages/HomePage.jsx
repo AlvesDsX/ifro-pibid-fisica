@@ -187,7 +187,6 @@ const HomePage = () => {
                     <Link to="/about">Conheça o Programa</Link>
                   </Button>
                 </div>
-                </div>
               </motion.div>
             </motion.div>
           </div>
