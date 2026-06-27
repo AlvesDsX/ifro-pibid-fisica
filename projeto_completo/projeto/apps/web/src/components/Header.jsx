@@ -47,7 +47,7 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-xs font-bold uppercase tracking-widest transition-all duration-200 relative group ${
+                className={`text-[10px] font-bold uppercase tracking-[0.15em] transition-all duration-200 relative group ${
                   isActive(link.path)
                     ? 'text-foreground'
                     : 'text-muted-foreground hover:text-foreground'
@@ -64,8 +64,7 @@ const Header = () => {
             <img
               src={logoIfro}
               alt="Logo do IFRO"
-              className="h-12 w-auto object-contain"
-              style={{ filter: 'brightness(0)' }}
+              className="h-12 w-auto object-contain logo-filter"
             />
             <div className="w-px h-10 bg-border"></div>
             <div className="leading-tight text-center">
@@ -80,7 +79,7 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-xs font-bold uppercase tracking-widest transition-all duration-200 relative group ${
+                className={`text-[10px] font-bold uppercase tracking-[0.15em] transition-all duration-200 relative group ${
                   isActive(link.path)
                     ? 'text-foreground'
                     : 'text-muted-foreground hover:text-foreground'
@@ -93,7 +92,7 @@ const Header = () => {
             <Button
               asChild
               size="sm"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] text-xs tracking-widest uppercase px-5"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] text-[10px] tracking-[0.15em] uppercase px-5"
             >
               <Link to="/contato">Fale Conosco</Link>
             </Button>
@@ -106,8 +105,7 @@ const Header = () => {
             <img
               src={logoIfro}
               alt="Logo do IFRO"
-              className="h-10 w-auto object-contain"
-              style={{ filter: 'brightness(0)' }}
+              className="h-10 w-auto object-contain logo-filter"
             />
             <div className="w-px h-8 bg-border mx-1"></div>
             <div className="leading-tight">

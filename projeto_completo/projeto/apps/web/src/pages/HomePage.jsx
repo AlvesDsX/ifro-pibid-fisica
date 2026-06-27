@@ -7,6 +7,7 @@ import Footer from '@/components/Footer.jsx';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Marquee from '@/components/Marquee.jsx';
+import AnimatedCounter from '@/components/AnimatedCounter.jsx';
 
 const HomePage = () => {
   const atividades = [
@@ -124,7 +125,7 @@ const HomePage = () => {
               className="max-w-6xl"
             >
               {/* Eyebrow institucional */}
-              <div className="text-primary font-bold tracking-widest uppercase text-xs mb-6 flex items-center gap-3">
+              <div className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] sm:text-[11px] mb-6 flex items-center gap-3">
                 <span className="w-6 h-px bg-primary"></span>
                 Programa Institucional de Bolsa de Iniciação à Docência
               </div>
@@ -209,24 +210,30 @@ const HomePage = () => {
         />
 
         {/* Números */}
-        <section className="py-16 md:py-24 bg-muted/30 border-y border-border">
+        <section className="py-24 md:py-32 bg-muted/30 border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8">
-              {numeros.map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex flex-col"
-                >
-                  <div className="text-4xl sm:text-5xl md:text-6xl font-serif text-foreground font-bold tracking-tight mb-2 md:mb-4" style={{ fontVariantNumeric: 'tabular-nums' }}>
-                    {item.metric}
-                  </div>
-                  <div className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-widest leading-tight">{item.label}</div>
-                </motion.div>
-              ))}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
+              {numeros.map((item, index) => {
+                const numValue = parseInt(item.metric.replace(/\D/g, ''));
+                const hasPlus = item.metric.includes('+');
+                
+                return (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="flex flex-col items-center md:items-start text-center md:text-left"
+                  >
+                    <div className="text-6xl sm:text-7xl md:text-8xl font-serif text-foreground font-black tracking-tighter mb-4" style={{ fontVariantNumeric: 'tabular-nums' }}>
+                      <AnimatedCounter value={numValue} />
+                      {hasPlus && <span className="text-4xl sm:text-5xl text-primary align-top font-sans font-medium ml-1">+</span>}
+                    </div>
+                    <div className="text-[10px] sm:text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] leading-tight max-w-[120px] mx-auto md:mx-0">{item.label}</div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>

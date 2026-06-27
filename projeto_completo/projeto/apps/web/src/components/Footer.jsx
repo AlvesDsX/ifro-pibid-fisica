@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-5">
             <Link to="/" className="inline-flex items-center gap-2 mb-6">
-              <img src={logoIfro} alt="Logo IFRO" className="h-12 md:h-14 w-auto object-contain" style={{ filter: 'brightness(0)' }} />
+              <img src={logoIfro} alt="Logo IFRO" className="h-12 md:h-14 w-auto object-contain logo-filter" />
               <div>
                 <div className="text-2xl font-bold tracking-tight">PIBID Física</div>
                 <div className="text-xs text-muted-foreground tracking-widest uppercase">IFRO Campus Calama</div>

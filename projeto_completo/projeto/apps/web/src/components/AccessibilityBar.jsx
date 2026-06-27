@@ -1,10 +1,10 @@
 import React from 'react';
 import { useAccessibility } from '../contexts/AccessibilityContext';
-import { Type, Contrast, Map as MapIcon } from 'lucide-react';
+import { Type, Contrast, Moon, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const AccessibilityBar = () => {
-  const { isHighContrast, toggleHighContrast, fontSize, toggleFontSize } = useAccessibility();
+  const { isHighContrast, toggleHighContrast, fontSize, toggleFontSize, isDarkMode, toggleDarkMode } = useAccessibility();
 
   return (
     <div className="hidden sm:block bg-background/60 backdrop-blur-md text-foreground py-1.5 border-b border-border/50 text-xs sm:text-sm font-medium z-50 relative">
@@ -27,6 +27,14 @@ const AccessibilityBar = () => {
             {fontSize === 'large' ? 'Fonte Normal' : 'A+ Aumentar Fonte'}
           </button>
           <button 
+            onClick={toggleDarkMode} 
+            className="hover:underline opacity-80 hover:opacity-100 flex items-center gap-1.5 transition-opacity"
+            aria-label="Modo Escuro"
+          >
+            {isDarkMode ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
+            {isDarkMode ? 'Modo Claro' : 'Modo Escuro'}
+          </button>
+          <button 
             onClick={toggleHighContrast} 
             className="hover:underline opacity-80 hover:opacity-100 flex items-center gap-1.5 transition-opacity"
             aria-label="Alto Contraste"
@@ -34,9 +42,6 @@ const AccessibilityBar = () => {
             <Contrast className="w-3.5 h-3.5" />
             {isHighContrast ? 'Contraste Normal' : 'Alto Contraste'}
           </button>
-          <Link to="/mapa-do-site" className="hover:underline opacity-80 hover:opacity-100 items-center gap-1.5 hidden md:flex">
-            <MapIcon className="w-3.5 h-3.5" /> Mapa do Site
-          </Link>
         </div>
       </div>
     </div>

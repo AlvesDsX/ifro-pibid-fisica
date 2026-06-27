@@ -7,6 +7,7 @@ export const useAccessibility = () => useContext(AccessibilityContext);
 export const AccessibilityProvider = ({ children }) => {
   const [isHighContrast, setIsHighContrast] = useState(false);
   const [fontSize, setFontSize] = useState('normal');
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -19,6 +20,15 @@ export const AccessibilityProvider = ({ children }) => {
 
   useEffect(() => {
     const root = document.documentElement;
+    if (isDarkMode) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    const root = document.documentElement;
     if (fontSize === 'large') {
       root.classList.add('text-large-mode');
     } else {
@@ -28,9 +38,10 @@ export const AccessibilityProvider = ({ children }) => {
 
   const toggleHighContrast = () => setIsHighContrast(prev => !prev);
   const toggleFontSize = () => setFontSize(prev => prev === 'normal' ? 'large' : 'normal');
+  const toggleDarkMode = () => setIsDarkMode(prev => !prev);
 
   return (
-    <AccessibilityContext.Provider value={{ isHighContrast, toggleHighContrast, fontSize, toggleFontSize }}>
+    <AccessibilityContext.Provider value={{ isHighContrast, toggleHighContrast, fontSize, toggleFontSize, isDarkMode, toggleDarkMode }}>
       {children}
     </AccessibilityContext.Provider>
   );

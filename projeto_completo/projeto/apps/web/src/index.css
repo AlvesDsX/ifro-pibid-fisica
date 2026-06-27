@@ -155,12 +155,22 @@ body {
   /* Aesthetic Refinements */
   .bg-grid-pattern {
     background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.12) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
   }
   .high-contrast .bg-grid-pattern {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  }
+
+  .logo-filter {
+    filter: brightness(0);
+    transition: filter 0.3s ease;
+  }
+  
+  .dark .logo-filter,
+  .high-contrast .logo-filter {
+    filter: brightness(0) invert(1);
   }
 
   .animate-float {
