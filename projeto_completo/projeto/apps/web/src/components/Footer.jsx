@@ -89,6 +89,16 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Tipografia Gigante Editorial */}
+        <div className="py-16 md:py-24 w-full flex justify-center border-t border-border mt-16 mb-8 overflow-hidden pointer-events-none">
+          <span 
+            className="font-serif font-black text-foreground tracking-tighter leading-none select-none text-center"
+            style={{ fontSize: 'clamp(6rem, 18vw, 24rem)' }}
+          >
+            PIBID
+          </span>
+        </div>
+
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-6">
           <p className="text-sm text-muted-foreground">

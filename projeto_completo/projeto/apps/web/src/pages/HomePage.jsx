@@ -473,26 +473,69 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-40 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">Quer saber mais?</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
-              Entre em contato com a equipe do PIBID Física IFRO Campus Calama e descubra como o programa transforma a formação docente e o ensino de física.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] px-12 py-8 text-lg shadow-editorial inline-flex"
+        {/* CTA Editorial */}
+        <section className="bg-foreground text-background py-32 md:py-48 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 pointer-events-none mix-blend-overlay"></div>
+          
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 relative z-10 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="md:col-span-7 lg:col-span-6"
             >
-              <a href="mailto:pibidfisicaifro@gmail.com">Fale com a equipe</a>
-            </Button>
-          </motion.div>
+              <div className="flex items-center gap-3 text-primary font-bold tracking-widest uppercase text-xs mb-8">
+                <span className="w-4 h-4 rounded-full border border-primary flex items-center justify-center text-[8px]">•</span>
+                Fale Conosco
+              </div>
+              
+              <h2 className="font-serif text-[4rem] sm:text-[5rem] md:text-[6rem] lg:text-[7rem] leading-[0.9] tracking-tighter mb-8 text-background">
+                Faça<br />
+                Parte da<br />
+                <span className="text-primary italic font-light">Equipe.</span>
+              </h2>
+
+              <p className="text-lg text-muted-foreground/80 max-w-md mb-12">
+                Entre em contato com a equipe do PIBID Física IFRO Campus Calama e descubra como o programa transforma o ensino.
+              </p>
+
+              <div className="flex border-b border-background/20 pb-2 max-w-md group focus-within:border-primary transition-colors">
+                <input 
+                  type="email" 
+                  placeholder="seu@email.com" 
+                  className="bg-transparent border-none outline-none text-background placeholder:text-muted-foreground/50 flex-1 text-sm tracking-wide"
+                />
+                <a href="mailto:pibidfisicaifro@gmail.com" className="text-xs font-bold uppercase tracking-widest text-background hover:text-primary transition-colors group-focus-within:text-primary flex items-center gap-2 cursor-pointer">
+                  Enviar <ArrowRight className="w-3 h-3" />
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="md:col-span-5 md:col-start-8"
+            >
+              <div className="flex flex-col space-y-12">
+                <div>
+                  <h3 className="font-serif text-2xl mb-4 text-background">IFRO Calama</h3>
+                  <p className="text-sm text-muted-foreground/80 max-w-xs">
+                    Av. Calama, 4985 - Flodoaldo Pontes Pinto, Porto Velho - RO, 76820-441
+                  </p>
+                </div>
+                
+                <div className="pt-8 border-t border-background/10">
+                  <h3 className="font-serif text-2xl mb-4 text-background">Escolas Parceiras</h3>
+                  <p className="text-sm text-muted-foreground/80 max-w-xs">
+                    Atuamos em diversas escolas da rede pública estadual da capital rondoniense.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </section>
 
         <Footer />
