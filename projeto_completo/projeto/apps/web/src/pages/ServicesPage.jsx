@@ -104,7 +104,7 @@ const ServicesPage = () => {
       icon: Waves,
       title: 'Maquete do Sistema Solar',
       description: 'Construção de maquetes em escala aproximada do Sistema Solar, integrando física, astronomia e artes. Projeto interdisciplinar que desperta o interesse pela ciência espacial.',
-      image: 'https://images.unsplash.com/photo-1614728263952-84ea256f9d6d?w=800',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800',
       destaque: [
         'Escalas e proporções',
         'Gravitação universal',

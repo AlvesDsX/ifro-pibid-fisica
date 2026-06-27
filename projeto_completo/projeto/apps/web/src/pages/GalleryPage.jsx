@@ -13,7 +13,7 @@ const GalleryPage = () => {
 
   const images = [
     { src: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800', alt: 'Alunos observando experimento', category: 'Experimentos', width: 'col-span-1 md:col-span-2', height: 'row-span-2' },
-    { src: 'https://images.unsplash.com/photo-1564472332906-8dce28271a39?w=800', alt: 'Laboratório de Física', category: 'Laboratório', width: 'col-span-1', height: 'row-span-1' },
+    { src: 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800', alt: 'Laboratório de Física', category: 'Laboratório', width: 'col-span-1', height: 'row-span-1' },
     { src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800', alt: 'Professores na sala de aula', category: 'Sala de Aula', width: 'col-span-1', height: 'row-span-1' },
     { src: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800', alt: 'Feira de Ciências', category: 'Eventos', width: 'col-span-1', height: 'row-span-2' },
     { src: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800', alt: 'Foguete de Garrafa PET', category: 'Experimentos', width: 'col-span-1 md:col-span-2', height: 'row-span-1' },

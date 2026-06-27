@@ -150,17 +150,17 @@ const AboutPage = () => {
               >
                 <div className="space-y-12">
                   <div className="border-l-2 border-primary pl-8">
-                    <div className="text-xl font-serif font-bold tracking-widest text-primary mb-2">01</div>
+                    <div className="text-sm font-medium tracking-[0.2em] text-primary/80 mb-3">01</div>
                     <h3 className="text-2xl font-bold tracking-tight mb-3">Para os pibidianos</h3>
                     <p className="text-muted-foreground leading-relaxed">Vivência real em sala de aula durante a graduação, com supervisão de professores experientes e apoio de coordenadores do IFRO.</p>
                   </div>
                   <div className="border-l-2 border-border pl-8">
-                    <div className="text-xl font-serif font-bold tracking-widest text-primary mb-2">02</div>
+                    <div className="text-sm font-medium tracking-[0.2em] text-primary/80 mb-3">02</div>
                     <h3 className="text-2xl font-bold tracking-tight mb-3">Para os alunos da escola</h3>
                     <p className="text-muted-foreground leading-relaxed">Experimentos práticos, aulas dinâmicas e contato com estudantes universitários que servem de referência e inspiração acadêmica.</p>
                   </div>
                   <div className="border-l-2 border-border pl-8">
-                    <div className="text-xl font-serif font-bold tracking-widest text-primary mb-2">03</div>
+                    <div className="text-sm font-medium tracking-[0.2em] text-primary/80 mb-3">03</div>
                     <h3 className="text-2xl font-bold tracking-tight mb-3">Para a educação pública</h3>
                     <p className="text-muted-foreground leading-relaxed">Fortalecimento do ensino de física nas escolas parceiras, com materiais e metodologias inovadoras desenvolvidas em parceria com o IFRO.</p>
                   </div>
