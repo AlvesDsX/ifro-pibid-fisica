@@ -16,10 +16,14 @@ import GalleryPage from './pages/GalleryPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import NewsPage from './pages/NewsPage.jsx';
 import BookingModal from './components/BookingModal.jsx';
+import CustomCursor from './components/CustomCursor.jsx';
+import ScrollProgress from './components/ScrollProgress.jsx';
 
 function App() {
     return (
         <Router>
+            <ScrollProgress />
+            <CustomCursor />
             <ScrollToTop />
             <BookingModal />
             <Routes>

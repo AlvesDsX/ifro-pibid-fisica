@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, FlaskConical, Rocket, Users, BookOpen } from 'lucide-react';
@@ -6,6 +6,7 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import Marquee from '@/components/Marquee.jsx';
 
 const HomePage = () => {
   const atividades = [
@@ -112,22 +113,68 @@ const HomePage = () => {
       <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
         <Header />
 
-        <section className="relative pt-28 pb-16 md:pt-56 md:pb-32 overflow-hidden bg-grid-pattern">
+        {/* Hero Section */}
+        <section className="relative pt-28 pb-0 md:pt-56 md:pb-0 overflow-hidden bg-grid-pattern">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none z-0"></div>
-          <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-16 md:pb-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="max-w-6xl"
             >
+              {/* Eyebrow institucional */}
+              <div className="text-primary font-bold tracking-widest uppercase text-xs mb-6 flex items-center gap-3">
+                <span className="w-6 h-px bg-primary"></span>
+                Programa Institucional de Bolsa de Iniciação à Docência
+              </div>
+
               <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight sm:leading-none mb-8 md:mb-12 text-balance">
-                Aperfeiçoando a<br />
-                formação docente<br />
-                <span className="text-primary">na educação básica.</span>
+                {"Aperfeiçoando a".split('').map((ch, i) => (
+                  <motion.span
+                    key={`a-${i}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 + i * 0.03, ease: [0.22, 1, 0.36, 1] }}
+                    className="inline-block"
+                  >
+                    {ch === ' ' ? '\u00a0' : ch}
+                  </motion.span>
+                ))}
+                <br />
+                {"formação docente".split('').map((ch, i) => (
+                  <motion.span
+                    key={`b-${i}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.7 + i * 0.03, ease: [0.22, 1, 0.36, 1] }}
+                    className="inline-block"
+                  >
+                    {ch === ' ' ? '\u00a0' : ch}
+                  </motion.span>
+                ))}
+                <br />
+                <span className="text-primary">
+                  {"na educação básica.".split('').map((ch, i) => (
+                    <motion.span
+                      key={`c-${i}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 1.1 + i * 0.03, ease: [0.22, 1, 0.36, 1] }}
+                      className="inline-block"
+                    >
+                      {ch === ' ' ? '\u00a0' : ch}
+                    </motion.span>
+                  ))}
+                </span>
               </h1>
 
-              <div className="flex flex-col sm:flex-row sm:items-end gap-8 mt-8 md:mt-20 border-t border-border pt-8 md:pt-12">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.8 }}
+                className="flex flex-col sm:flex-row sm:items-end gap-8 border-t border-border pt-8 md:pt-12"
+              >
                 <p className="text-base sm:text-lg text-muted-foreground leading-relaxed flex-1">
                   O PIBID Física do IFRO forma professores comprometidos com a educação pública, levando experimentos, foguetes e descobertas científicas para escolas de Porto Velho.
                 </p>
@@ -140,12 +187,27 @@ const HomePage = () => {
                     <Link to="/about">Conheça o Programa</Link>
                   </Button>
                 </div>
-              </div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </section>
 
-
+        {/* Marquee — faixa deslizante editorial */}
+        <Marquee
+          items={[
+            'PIBID FÍSICA',
+            'IFRO CAMPUS CALAMA',
+            'INICIAÇÃO À DOCÊNCIA',
+            'ENSINO DE FÍSICA',
+            'PORTO VELHO',
+            '2014 – 2024',
+            'EDUCAÇÃO BÁSICA',
+            'EXPERIMENTAÇÃO CIENTÍFICA',
+          ]}
+          variant="dark"
+          speed="default"
+        />
 
         {/* Números */}
         <section className="py-16 md:py-24 bg-muted/30 border-y border-border">

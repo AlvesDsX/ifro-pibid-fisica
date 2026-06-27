@@ -182,3 +182,14 @@ body {
     transform: translateX(calc(-100% - 2rem));
   }
 }
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+/* Oculta o cursor padrão quando o cursor customizado está ativo */
+.cursor-custom-active,
+.cursor-custom-active * {
+  cursor: none !important;
+}

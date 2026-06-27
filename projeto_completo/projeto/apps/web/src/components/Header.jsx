@@ -39,57 +39,87 @@ const Header = () => {
     >
       <AccessibilityBar />
       <nav className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-6'}`}>
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-4 hover:opacity-80 transition-opacity duration-200">
-            {/* Logo do IFRO */}
-            <img 
-              src={logoIfro} 
-              alt="Logo do IFRO" 
-              className="h-10 sm:h-14 md:h-16 w-auto object-contain"
+      <nav className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${isScrolled ? 'py-3' : 'py-5'}`}>
+        {/* Desktop: grid 3 colunas com logo centralizado */}
+        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+          {/* Nav — esquerda */}
+          <div className="flex items-center gap-6">
+            {navLinks.slice(0, 3).map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-xs font-bold uppercase tracking-widest transition-all duration-200 relative group ${
+                  isActive(link.path)
+                    ? 'text-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {link.name}
+                <span className={`absolute -bottom-1 left-0 h-px bg-primary transition-all duration-300 ${isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Logo — centro */}
+          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-200 justify-center">
+            <img
+              src={logoIfro}
+              alt="Logo do IFRO"
+              className="h-12 w-auto object-contain"
               style={{ filter: 'brightness(0)' }}
             />
-
-            {/* Divisor vertical */}
-            <div className="w-px h-10 sm:h-14 bg-border mx-1 sm:mx-2"></div>
-
-            {/* Texto */}
-            <div className="leading-tight">
-              <div className="text-base sm:text-xl font-bold tracking-tight text-foreground">PIBID Física</div>
-              <div className="text-[10px] sm:text-xs text-muted-foreground font-medium tracking-widest uppercase mt-0.5">IFRO Campus Calama</div>
+            <div className="w-px h-10 bg-border"></div>
+            <div className="leading-tight text-center">
+              <div className="text-base font-bold tracking-tight text-foreground">PIBID Física</div>
+              <div className="text-[10px] text-muted-foreground font-medium tracking-widest uppercase">IFRO Campus Calama</div>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12">
-            <div className="flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-sm font-medium transition-all duration-200 relative group ${
-                    isActive(link.path)
-                      ? 'text-foreground'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {link.name}
-                  <span className={`absolute -bottom-1 left-0 h-px bg-primary transition-all duration-300 ${isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-                </Link>
-              ))}
-            </div>
+          {/* Nav — direita */}
+          <div className="flex items-center justify-end gap-6">
+            {navLinks.slice(3).map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-xs font-bold uppercase tracking-widest transition-all duration-200 relative group ${
+                  isActive(link.path)
+                    ? 'text-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {link.name}
+                <span className={`absolute -bottom-1 left-0 h-px bg-primary transition-all duration-300 ${isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+              </Link>
+            ))}
             <Button
               asChild
-              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] px-6"
+              size="sm"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] text-xs tracking-widest uppercase px-5"
             >
               <Link to="/contato">Fale Conosco</Link>
             </Button>
           </div>
+        </div>
 
-          {/* Mobile Menu Button */}
+        {/* Mobile: layout simples com hambúrguer */}
+        <div className="flex md:hidden items-center justify-between">
+          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200">
+            <img
+              src={logoIfro}
+              alt="Logo do IFRO"
+              className="h-10 w-auto object-contain"
+              style={{ filter: 'brightness(0)' }}
+            />
+            <div className="w-px h-8 bg-border mx-1"></div>
+            <div className="leading-tight">
+              <div className="text-sm font-bold tracking-tight text-foreground">PIBID Física</div>
+              <div className="text-[9px] text-muted-foreground font-medium tracking-widest uppercase">IFRO Campus Calama</div>
+            </div>
+          </Link>
+
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-10 h-10 flex items-center justify-center hover:bg-muted transition-colors duration-200"
+            className="w-10 h-10 flex items-center justify-center hover:bg-muted transition-colors duration-200"
             aria-label="Abrir menu"
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
