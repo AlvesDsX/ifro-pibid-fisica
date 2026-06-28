@@ -6,6 +6,7 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import experimentoImg from '/experimento.png';
 
 const AboutPage = () => {
   const valores = [
@@ -106,7 +107,7 @@ const AboutPage = () => {
             className="editorial-frame mx-auto max-w-5xl transform -rotate-1 hover:rotate-0 transition-transform duration-700"
           >
             <img
-              src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200"
+              src={experimentoImg}
               alt="Pibidianos e alunos realizando experimentos de física em escola pública"
               className="w-full h-[400px] md:h-[600px] object-cover"
             />
