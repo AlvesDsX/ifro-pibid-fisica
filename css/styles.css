@@ -1,15 +1,17 @@
 :root {
     --color-green-light: #00c853; /* Header background */
     --color-green-dark: #2e7d32; /* Sub-header bar */
-    --color-green-footer: #2b8b4b; /* Footer background */
+    --color-green-footer: #1b5e20; /* Footer background */
     --color-green-button: #00a859; /* Saber mais button */
-    --color-blue-bg: #0f52ba; /* Blue section background */
-    --color-bg: #f0f2f5;
-    --color-card-bg: #ffffff;
-    --color-text-main: #333333;
-    --color-text-muted: #555555;
+    --color-blue-bg: #0d47a1; /* Blue section background */
+    --color-bg: #121212;
+    --color-card-bg: #1e1e1e;
+    --color-text-main: #e0e0e0;
+    --color-text-muted: #aaaaaa;
     --color-white: #ffffff;
     --font-main: 'Inter', sans-serif;
+    --font-serif: 'Fraunces', serif;
+    --font-mono: 'JetBrains Mono', monospace;
 }
 
 * {
@@ -23,6 +25,14 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text-main);
     line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+}
+
+.quinzenal-text, .sub-header {
+    font-family: var(--font-mono);
 }
 
 /* Central Newsletter Container */
@@ -53,6 +63,7 @@ body {
 
 .panorama-title {
     color: var(--color-white);
+    font-family: var(--font-serif);
     font-size: 3.5rem;
     font-weight: 800;
     letter-spacing: 1px;
