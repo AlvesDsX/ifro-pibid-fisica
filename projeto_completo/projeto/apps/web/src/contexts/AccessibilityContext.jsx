@@ -7,7 +7,7 @@ export const useAccessibility = () => useContext(AccessibilityContext);
 export const AccessibilityProvider = ({ children }) => {
   const [isHighContrast, setIsHighContrast] = useState(false);
   const [fontSize, setFontSize] = useState('normal');
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const root = document.documentElement;
