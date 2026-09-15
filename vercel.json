@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd projeto_completo/projeto/apps/web && npm install && npx vite build --outDir dist --base /",
+  "outputDirectory": "projeto_completo/projeto/apps/web/dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
