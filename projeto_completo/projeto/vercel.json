@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd apps/web && npx vite build --outDir dist --base /",
+  "outputDirectory": "apps/web/dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
